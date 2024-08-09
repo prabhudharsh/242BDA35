@@ -1,43 +1,37 @@
 """
-    Algorithm Number: 04
-    Algorithm Name: 'Linear Search'
-    Script Author: Amandeep Singh Khanna
+Algorithm No : 01
+Algorithm Name : Linear Search
+Script Author : Prabhu Dharsh Antony
 """
 
 
-# Defining the function for linear search:
-def linear_search(search_element: int, search_lst: list) -> str:
+# Defining The function for Linear Search Algorithm
+def linear_search(target_element: int, array: list) -> str:
     """
-    Searches the value stored in the variable search_element,
-    in the list provided as search_lst.
-    1. search_element - int - Element to be searched.
-    2. search_lst - list - List with the elements to be
-    searched for.
+    Linear Search Algorithm searches each element in a list
+    One by one by increasing index numbers
+    Until the target element is found.
+    The Complexity is n.
     """
-    # Going through the value stored at each index in the search_lst.
-    for lst_idx in range(len(search_lst)):
-        # Checking if the element at the current index is the value to
-        # be searched for.
-        if search_element == search_lst[lst_idx]:
-            # If element found at current index.
-            return f"Element {search_element} found at list index {lst_idx}"
+    for list_index in range(len(array)):
+        # Loop through each element using For loop
+        if target_element == array[list_index]:
+            # Checking each element if it's similar to the target_element
+            return f"The Target Element, {target_element} was found at the index {list_index} of the Array."
         else:
-            # If element not found at the current index.
+            # If Target not present in the current index. The loop continues.
             continue
-    # If the element is not in search_lst.
-    return "Element not in the list"
+    else:
+        # If the Target Element was not present, Not found message is returned.
+        return f"The Target Element, {target_element} was not found in the Array."
 
 
 def main() -> None:
-    """
-    The main function of the program.
-    """
-    # Defining the list to be searched
-    search_lst = [10, 20, 2, 1, 33, 4]
-    search_element = 2  # Element to be searched for
-
-    # Searching for element 2 in the above specified list
-    print(linear_search(search_element=search_element, search_lst=search_lst))
+    """This is the main function of the program."""
+    array = [1, 5, 3, 6, 4, 7, 9, 2]
+    target_element = 4
+    print(linear_search(target_element=target_element, array=array))
+    # The Linear search Function is called.
 
 
 if __name__ == "__main__":
